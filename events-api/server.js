@@ -32,8 +32,8 @@ const connection = mysql.createConnection({
 // mock events data - Once deployed the data will come from database
 const mockEvents = {
     events: [
-        { id: 1, title: 'Mock Pet Show', event_time: 'June 6 at Noon', description: 'Super-fun with furry friends!', location: 'Reston Dog Park', likes: 0, datetime_added: '2021-02-01:12:00' },
-        { id: 2, title: 'Mock Company Picnic', event_time: '4th of July', description: 'Come for free food and drinks.', location: 'At the lake', likes: 0, datetime_added: '2021-02-01:12:00' },
+        { id: 1, title: 'Company Pet Show', event_time: 'November 6 at Noon', description: 'Super-fun with furry friends!', location: 'Reston Dog Park', likes: 0, datetime_added: '2021-09-30:12:00' },
+        { id: 2, title: 'Company Picnic', event_time: 'July 4th at 10:00AM', description: 'Come for free food and drinks.', location: 'Central park', likes: 0, datetime_added: '2021-09-30:12:02' },
     ]
 };
 
