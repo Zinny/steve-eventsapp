@@ -1,0 +1,27 @@
+<ul>
+  {{#events}}
+  <hr />
+  <div class="container">
+    <h2>{{ title }}</h2>
+    <div class="h4">{{ description }}</div>
+    <div>When: {{ event_time }}</div>
+    <div>Where: {{ location }}</div>
+    <div><span class="like" id="{{ id }}">&#128077;</span></div>
+		<div><span id="like-{{ id }}">Likes: {{ likes }}</span></div>
+    <small class="text-muted">{{ datetime_added }}</small>
+  </div>
+  {{/events}}
+</ul>
+
+
+
+<script>
+	$(".like").css( 'cursor', 'pointer' ).click(function(){   	
+    	var url = "/like/" + this.id;
+    	$.get(url, function(data, status){
+        	var likeID = "like-" + data.id;
+        	document.getElementById(likeID).innerHTML = "Likes: " + data.likes;
+    });
+});
+
+</script>
