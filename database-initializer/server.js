@@ -14,8 +14,10 @@ const create_table_sql = `CREATE TABLE events(
     PRIMARY KEY ( id ));`
 
 const add_record_sql = `INSERT INTO events (title, event_time, description, location) 
-VALUES ('Pet Show', 'June 6 at Noon', 
-'Super-fun with furry friends!', 'Reston Dog Park');`
+VALUES ('Company Pet Show', 'November 6 at Noon', 
+'Super-fun with furry friends!', 'Reston Dog Park'),
+('Company Picnic', 'July 4th at 10:00AM', 
+'Come for free food and drinks.', 'Central Park');`
 
 function init_database() {
     const HOST = process.env.DBHOST ? process.env.DBHOST : "127.0.0.1";
