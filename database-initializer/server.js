@@ -14,9 +14,9 @@ const create_table_sql = `CREATE TABLE events(
     PRIMARY KEY ( id ));`
 
 const add_record_sql = `INSERT INTO events (title, event_time, description, location) 
-VALUES ('Company Pet Show', 'November 6 at Noon', 
+VALUES ('Company Pet Show (DB)', 'November 6 at Noon', 
 'Super-fun with furry friends!', 'Reston Dog Park'),
-('Company Picnic', 'July 4th at 10:00AM', 
+('Company Picnic (DB)', 'July 4th at 10:00AM', 
 'Come for free food and drinks.', 'Central Park');`
 
 function init_database() {
