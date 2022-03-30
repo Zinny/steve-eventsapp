@@ -4,9 +4,9 @@ metadata:
     name: autoscale-app-hpa
 spec:
     scaleTargetRef:
-        apiVersion: apps/v1
-        kind: Deployment
-        name: autoscale-app
+      apiVersion: apps/v1
+      kind: Deployment
+      name: autoscale-app
     minReplicas: 2
     maxReplicas: 6
     metrics:
