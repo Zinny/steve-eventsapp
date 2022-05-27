@@ -47,7 +47,7 @@ function init_database() {
                             console.log("Table created");
                             // Add a Record
                             connection.query(add_record_sql, function (err, result) {
-                                console.log("Record added");
+                                console.log("Records added");
                                 succeeded = true;
                             });
                         });
