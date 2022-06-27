@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: supermario-pod
+  labels:
+    app: mario
+spec:
+  containers:
+  - name:  supermario-demo
+    image: pengbai/docker-supermario
+    ports: 
+    - containerPort: 8080
