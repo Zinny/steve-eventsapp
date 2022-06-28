@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ labels:
+   app: events-api
+ name: events-api
+spec:
+ replicas: 4
+ selector:
+   matchLabels:
+     app: events-api
+     ver: v1.0
+ template:
+   metadata:
+     labels:
+       app: events-api
+       ver: v1.0
+   spec:
+     containers:
+     - image: gcr.io/roidtc-june22-u201/events-api:v1.0
+       name: events-api
+       ports:
+       - containerPort: 8082

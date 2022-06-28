@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+ labels:
+   app: events-web-svc
+ name: events-web-svc
+spec:
+ ports:
+ - port: 80
+   protocol: TCP
+   targetPort: 8080
+ selector:
+   app: events-web
+   ver: v1.0
+ type: LoadBalancer

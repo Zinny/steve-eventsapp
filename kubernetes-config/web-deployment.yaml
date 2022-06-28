@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ labels:
+   app: events-web
+ name: events-web
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: events-web
+     ver: v1.0
+ template:
+   metadata:
+     labels:
+       app: events-web
+       ver: v1.0
+   spec:
+     containers:
+     - image: gcr.io/roidtc-june22-u201/events-website:v2.0
+       name: events-web
+       ports:
+       - containerPort: 8080
+       env:
+       - name: SERVER
+         value: "http://events-api-svc:8082"
+
