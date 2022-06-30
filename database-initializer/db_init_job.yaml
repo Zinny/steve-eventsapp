@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+ name: db-initializer
+spec:
+ template:
+   spec:
+     containers:
+     - image: gcr.io/roidtc-june22-u201/events-job:v1.0
+       name: db-init-job
+       imagePullPolicy: "Always"
+       env:
+       - name: DBHOST
+         value: "database-server-mariadb"
+       - name: DBUSER
+         value: "root"
+       - name: DBPASSWORD
+         valueFrom:
+           secretKeyRef:
+             name: database-server-mariadb
+             key: mariadb-root-password
+     restartPolicy: Never
+ backoffLimit: 4

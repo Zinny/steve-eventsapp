@@ -1,0 +1,17 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+ name: allow-egress-dns
+ namespace: test
+spec:
+ policyTypes:
+ - Egress
+ podSelector: {}
+ egress:
+ - ports:
+   - port: 53
+     protocol: UDP
+   - port: 53
+     protocol: TCP
+ - to:
+   - namespaceSelector: {}
