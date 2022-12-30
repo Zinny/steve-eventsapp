@@ -12,7 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.3",
+    "mocha": "^10.2.0",
     "nock": "^10.0.6",
     "nyc": "^14.1.1",
     "supertest": "^4.0.2"
